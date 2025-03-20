@@ -1,0 +1,3 @@
+python-docx>=0.8.11
+python-odf>=1.4.1
+pillow>=9.0.0

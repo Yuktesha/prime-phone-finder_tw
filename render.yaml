@@ -1,0 +1,28 @@
+services:
+  # 後端 API 服務
+  - type: web
+    name: prime-phone-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python phone_api.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+    
+  # 前端靜態網站
+  - type: web
+    name: prime-phone-frontend
+    env: static
+    buildCommand: echo "No build required for static site"
+    staticPublishPath: ./frontend
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://prime-phone-backend.onrender.com/api/*
+      - type: rewrite
+        source: /*
+        destination: /index.html

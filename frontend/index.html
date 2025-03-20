@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>質數手機號碼生成器</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --primary-hover: #2a75f3;
+            --secondary-color: #5E35B1;
+            --secondary-hover: #4527A0;
+            --success-color: #4CAF50;
+            --error-color: #F44336;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #ddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --card-bg: #fff;
+            --bg-color: #f5f5f5;
+            --header-bg: #fff;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #4285F4;
+            --primary-hover: #5a95f5;
+            --secondary-color: #7E57C2;
+            --secondary-hover: #9575CD;
+            --success-color: #66BB6A;
+            --error-color: #EF5350;
+            --text-color: #eee;
+            --light-text: #bbb;
+            --border-color: #444;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --card-bg: #333;
+            --bg-color: #222;
+            --header-bg: #2d2d2d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .input-group small {
+            display: block;
+            margin-top: 5px;
+            color: var(--light-text);
+            font-size: 12px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .phone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .phone-number {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .phone-number span {
+            font-size: 16px;
+            font-family: monospace;
+        }
+
+        .copy-button {
+            padding: 5px 10px;
+            font-size: 12px;
+            background-color: var(--secondary-color);
+        }
+
+        .prefix-section {
+            margin-bottom: 30px;
+        }
+
+        .prefix-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .prefix-section p {
+            margin-bottom: 15px;
+        }
+
+        .prefix-container {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .prefix-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            width: calc(20% - 8px); /* 每行5個，考慮間距 */
+            box-shadow: 0 1px 3px var(--shadow-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .prefix-row:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px var(--shadow-color);
+        }
+
+        .prefix-row-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+            background-color: var(--primary-color);
+            padding: 6px 0;
+        }
+
+        .prefix-items {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 0;
+        }
+
+        .prefix-item {
+            text-align: left;
+            padding: 6px 10px;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+
+        .prefix-item:last-child {
+            border-bottom: none;
+        }
+
+        .prefix-item:hover {
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+
+        .prefix-number {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .prefix-count {
+            font-size: 12px;
+            color: var(--light-text);
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
+
+        /* 根據瀏覽器寬度調整前綴表格的排列方式 */
+        @media (max-width: 1200px) {
+            .prefix-row {
+                width: calc(25% - 8px); /* 每行4個 */
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .prefix-row {
+                width: calc(33.33% - 7px); /* 每行3個 */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .prefix-row {
+                width: calc(50% - 5px); /* 每行2個 */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .prefix-row {
+                width: 100%; /* 每行1個 */
+            }
+            
+            .prefix-items {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 5px;
+                gap: 5px;
+            }
+            
+            .prefix-item {
+                width: calc(20% - 4px);
+                border: 1px solid var(--border-color);
+                border-radius: 4px;
+                padding: 5px;
+                margin-bottom: 0;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .prefix-count {
+                margin-top: 3px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .prefix-items {
+                gap: 4px;
+            }
+            
+            .prefix-item {
+                width: calc(25% - 3px);
+            }
+        }
+
+        .error-message {
+            color: var(--error-color);
+            text-align: center;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 4px;
+            background-color: rgba(255, 68, 68, 0.1);
+            max-width: 80%;
+        }
+
+        .retry-button {
+            display: block;
+            margin: 10px auto;
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .retry-button:hover {
+            opacity: 0.9;
+        }
+
+        .loading {
+            text-align: center;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error-message {
+            color: var(--error-color);
+            margin: 10px 0;
+        }
+
+        .success-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--success-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .success-message.show {
+            opacity: 1;
+        }
+
+        .export-options {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .export-button {
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .export-button:before {
+            content: "📥";
+            font-size: 1.2em;
+        }
+
+        .export-button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px var(--shadow-color);
+        }
+
+        .export-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .result-info {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: rgba(66, 133, 244, 0.1);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .action-buttons button {
+            background-color: var(--secondary-color);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .result-info {
+                background-color: rgba(66, 133, 244, 0.2);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .phone-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .prefix-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            }
+            
+            .prefix-button {
+                padding: 8px 4px;
+                font-size: 12px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+
+        /* 質數結果樣式 */
+        .phone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .phone-number {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px var(--shadow-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .phone-number:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px var(--shadow-color);
+        }
+
+        .phone-number.is-input-prime {
+            background-color: rgba(76, 175, 80, 0.1);
+            border-color: #4CAF50;
+        }
+
+        .prime-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .prime-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .prime-detail.is-input-prime {
+            border-left: 4px solid #4CAF50;
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+
+        .prime-number {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .prime-diff {
+            color: var(--light-text);
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 4px 8px;
+            border-radius: 12px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .action-buttons button {
+            padding: 8px 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .action-buttons button:hover {
+            background-color: var(--secondary-hover);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 4px var(--shadow-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 20px;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .prefix-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .prefix-link:hover {
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+
+        [data-theme="dark"] .theme-toggle .light-icon {
+            display: inline-block;
+        }
+
+        [data-theme="dark"] .theme-toggle .dark-icon {
+            display: none;
+        }
+
+        .theme-toggle .light-icon {
+            display: none;
+        }
+
+        .theme-toggle .dark-icon {
+            display: inline-block;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .section-header h2 {
+            margin-bottom: 0;
+        }
+
+        /* 祝賀動畫樣式 */
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .celebration-content {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            animation: scaleIn 0.5s ease-in-out;
+        }
+        
+        .celebration h2 {
+            color: var(--success-color);
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+        
+        .celebration p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .celebration button {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .celebration button:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>質數手機號碼搜尋器</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <div id="prefix-section" class="prefix-section">
+                <div class="section-header">
+                    <h2>前綴參考表</h2>
+                    <button class="theme-toggle" id="themeToggle" title="切換主題">
+                        <span class="dark-icon">🌙</span>
+                        <span class="light-icon">☀️</span>
+                    </button>
+                </div>
+                <p>以下是所有可用的前綴，按數字從小到大排序：</p>
+                <div id="prefixTable" class="prefix-table-container">
+                    <div class="loading active">
+                        <div class="spinner"></div>
+                        <p>載入中...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>尋找最接近的質數</h2>
+            <div class="input-group">
+                <label for="phoneInput">輸入手機號碼：</label>
+                <input type="text" id="phoneInput" placeholder="例如：0912-345-678 或 0912345678">
+                <small>系統會自動移除所有非數字字符，請確保輸入的是台灣手機號碼（09開頭，共10位數字）</small>
+            </div>
+            
+            <div class="input-group">
+                <label for="countInput">顯示數量：</label>
+                <input type="number" id="countInput" min="1" max="100" value="5" placeholder="1-100">
+                <small>顯示最接近的幾個質數（1-100）</small>
+            </div>
+            
+            <button id="searchButton">尋找最接近的質數</button>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>搜尋中...</p>
+            </div>
+            
+            <div id="results"></div>
+        </div>
+    </div>
+    
+    <div class="success-message" id="successMessage"></div>
+    
+    <script>
+        const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+            ? 'http://127.0.0.1:5000/api' 
+            : 'https://prime-phone-backend.onrender.com/api';
+        
+        // API 請求超時設置（30秒）
+        const API_TIMEOUT = 30000;
+        
+        // DOM 元素
+        const elements = {
+            prefixTable: document.getElementById('prefixTable'),
+            phoneInput: document.getElementById('phoneInput'),
+            countInput: document.getElementById('countInput'),
+            searchButton: document.getElementById('searchButton'),
+            loading: document.getElementById('loading'),
+            results: document.getElementById('results'),
+            successMessage: document.getElementById('successMessage'),
+            themeToggle: document.getElementById('themeToggle')
+        };
+        
+        // 主題設置
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('theme', themeName);
+        }
+        
+        // 初始化主題
+        function initTheme() {
+            // 檢查本地存儲中的主題設置
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme) {
+                // 如果有保存的主題設置，使用它
+                setTheme(savedTheme);
+            } else {
+                // 否則，檢查系統偏好
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setTheme(prefersDarkScheme ? 'dark' : 'light');
+            }
+        }
+        
+        // 切換主題
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        }
+        
+        // 初始化主題
+        initTheme();
+        
+        // 監聽系統主題變化
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+        
+        // 顯示錯誤訊息
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            elements.results.innerHTML = '';
+            elements.results.appendChild(errorDiv);
+        }
+        
+        // 顯示成功訊息
+        function showSuccess(message) {
+            elements.successMessage.textContent = message;
+            elements.successMessage.classList.add('show');
+            
+            setTimeout(() => {
+                elements.successMessage.classList.remove('show');
+            }, 3000);
+        }
+        
+        // 切換載入狀態
+        function toggleLoading(show) {
+            if (show) {
+                elements.loading.classList.add('active');
+            } else {
+                elements.loading.classList.remove('active');
+            }
+        }
+        
+        // 複製到剪貼簿
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showSuccess('已複製到剪貼簿');
+                })
+                .catch(err => {
+                    console.error('複製失敗:', err);
+                    showError('複製失敗');
+                });
+        }
+        
+        // 格式化手機號碼
+        function formatPhoneNumber(number) {
+            // 確保號碼是字符串
+            number = String(number);
+            
+            // 如果號碼不是以 '0' 開頭，則添加 '0'
+            if (!number.startsWith('0')) {
+                number = '0' + number;
+            }
+            
+            // 格式化為 "0000-000-000" 格式
+            if (number.length === 10) {
+                return number.substring(0, 4) + '-' + number.substring(4, 7) + '-' + number.substring(7);
+            }
+            
+            return number;
+        }
+        
+        // 清理手機號碼（移除非數字字符）
+        function cleanPhoneNumber(number) {
+            return number.replace(/\D/g, '');
+        }
+
+        // 帶超時的 fetch
+        async function fetchWithTimeout(url, options = {}) {
+            const controller = new AbortController();
+            const { signal } = controller;
+            
+            const timeout = setTimeout(() => controller.abort(), API_TIMEOUT);
+            
+            try {
+                const response = await fetch(url, { ...options, signal });
+                clearTimeout(timeout);
+                return response;
+            } catch (error) {
+                clearTimeout(timeout);
+                if (error.name === 'AbortError') {
+                    throw new Error('請求超時，請稍後再試');
+                }
+                throw error;
+            }
+        }
+        
+        // 自動重試機制
+        async function fetchWithRetry(url, options = {}, retries = 2) {
+            let lastError;
+            
+            for (let i = 0; i <= retries; i++) {
+                try {
+                    return await fetchWithTimeout(url, options);
+                } catch (error) {
+                    lastError = error;
+                    if (i < retries) {
+                        // 等待一段時間再重試
+                        await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
+                    }
+                }
+            }
+            
+            throw lastError;
+        }
+
+        // 載入前綴列表
+        async function loadPrefixes() {
+            try {
+                const response = await fetchWithRetry(`${API_BASE_URL}/list_prime_phone_prefixes`);
+                if (!response.ok) {
+                    throw new Error(await response.text());
+                }
+
+                const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                // 檢查 API 返回的數據結構
+                const prefixes = data.data?.prefixes || [];
+                
+                if (prefixes.length === 0) {
+                    throw new Error('未找到可用的前綴');
+                }
+
+                // 創建前綴容器
+                const prefixContainer = document.createElement('div');
+                prefixContainer.className = 'prefix-container';
+                
+                // 按十位數分組，個位數對齊
+                // 先將前綴按數字排序
+                prefixes.sort((a, b) => parseInt(a.prefix) - parseInt(b.prefix));
+                
+                // 創建一個0-9的數組，用於存儲每個個位數的前綴
+                const digitGroups = {};
+                
+                // 將前綴按十位數分組
+                prefixes.forEach(prefix => {
+                    const prefixNum = parseInt(prefix.prefix);
+                    const tensDigit = Math.floor(prefixNum / 10) * 10;
+                    
+                    if (!digitGroups[tensDigit]) {
+                        digitGroups[tensDigit] = [];
+                    }
+                    
+                    digitGroups[tensDigit].push(prefix);
+                });
+                
+                // 按照十位數順序創建行
+                const tensDigits = Object.keys(digitGroups).sort((a, b) => parseInt(a) - parseInt(b));
+                
+                tensDigits.forEach(tensDigit => {
+                    const prefixesInTens = digitGroups[tensDigit];
+                    
+                    // 創建行
+                    const row = document.createElement('div');
+                    row.className = 'prefix-row';
+                    
+                    // 創建行標題
+                    const rowHeader = document.createElement('div');
+                    rowHeader.className = 'prefix-row-header';
+                    rowHeader.textContent = tensDigit + 's';
+                    row.appendChild(rowHeader);
+                    
+                    // 創建前綴項容器
+                    const itemsContainer = document.createElement('div');
+                    itemsContainer.className = 'prefix-items';
+                    
+                    // 按個位數排序
+                    prefixesInTens.sort((a, b) => parseInt(a.prefix) % 10 - parseInt(b.prefix) % 10);
+                    
+                    // 為每個前綴創建一個項
+                    prefixesInTens.forEach(({ prefix, count }) => {
+                        const item = document.createElement('div');
+                        item.className = 'prefix-item';
+                        
+                        const prefixSpan = document.createElement('span');
+                        prefixSpan.className = 'prefix-number';
+                        prefixSpan.textContent = prefix;
+                        
+                        const countSpan = document.createElement('span');
+                        countSpan.className = 'prefix-count';
+                        countSpan.textContent = `(${count})`;
+                        
+                        item.appendChild(prefixSpan);
+                        item.appendChild(countSpan);
+                        itemsContainer.appendChild(item);
+                    });
+                    
+                    row.appendChild(itemsContainer);
+                    prefixContainer.appendChild(row);
+                });
+                
+                // 清除載入指示器並添加容器
+                elements.prefixTable.innerHTML = '';
+                elements.prefixTable.appendChild(prefixContainer);
+
+            } catch (error) {
+                console.error('載入前綴失敗：', error);
+                
+                // 顯示錯誤訊息
+                elements.prefixTable.innerHTML = `
+                    <div class="error-message">
+                        載入前綴失敗：${error.message}
+                        <button class="retry-button" onclick="loadPrefixes()">重試</button>
+                    </div>
+                `;
+            }
+        }
+
+        // 尋找最接近的質數
+        async function findClosestPrime() {
+            try {
+                const phoneInput = elements.phoneInput.value.trim();
+                if (!phoneInput) {
+                    throw new Error('請輸入手機號碼');
+                }
+                
+                // 移除所有非數字字符
+                const cleanedNumber = cleanPhoneNumber(phoneInput);
+                
+                // 檢查是否是有效的手機號碼
+                if (!cleanedNumber.match(/^09\d{8}$/)) {
+                    throw new Error('請輸入有效的台灣手機號碼（09開頭，共10位數字）');
+                }
+                
+                // 獲取數量
+                const count = elements.countInput.value;
+                if (isNaN(count) || count < 1 || count > 100) {
+                    throw new Error('請輸入1-100之間的數量');
+                }
+
+                toggleLoading(true);
+                elements.results.innerHTML = '';
+
+                const response = await fetchWithRetry(`${API_BASE_URL}/find_closest_prime?number=${cleanedNumber}&count=${count}`);
+                if (!response.ok) {
+                    throw new Error(await response.text());
+                }
+
+                const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                if (!data.primes || data.primes.length === 0) {
+                    elements.results.innerHTML = '<p>未找到最接近的質數</p>';
+                    return;
+                }
+
+                // 檢查是否有輸入的號碼是質數
+                const isPrimeInput = data.primes.some(prime => prime.is_input_prime);
+                
+                // 如果輸入的號碼是質數，顯示祝賀動畫
+                if (isPrimeInput) {
+                    setTimeout(() => {
+                        showCelebration();
+                    }, 500);
+                }
+
+                // 顯示結果，包含更多詳細資訊
+                let resultHTML = `
+                    <h3>最接近的 ${data.count} 個質數：</h3>
+                    <div class="phone-grid">
+                `;
+                
+                // 添加所有找到的質數
+                data.primes.forEach(prime => {
+                    resultHTML += `
+                        <div class="phone-number ${prime.is_input_prime ? 'is-input-prime' : ''}">
+                            <span>${formatPhoneNumber(prime.prime_number)}</span>
+                            <button class="copy-button" onclick="copyToClipboard('${prime.prime_number}')">複製</button>
+                        </div>
+                    `;
+                });
+                
+                resultHTML += `</div>`;
+                
+                // 顯示差距資訊
+                resultHTML += `<div class="prime-details">`;
+                
+                data.primes.forEach(prime => {
+                    let directionText = '';
+                    if (prime.direction === 'larger') {
+                        directionText = '大';
+                    } else if (prime.direction === 'smaller') {
+                        directionText = '小';
+                    } else {
+                        directionText = '等於';
+                    }
+                    
+                    let detailClass = prime.is_input_prime ? 'prime-detail is-input-prime' : 'prime-detail';
+                    
+                    resultHTML += `
+                        <div class="${detailClass}">
+                            <span class="prime-number">${formatPhoneNumber(prime.prime_number)}</span>
+                            <span class="prime-diff">差距: ${prime.difference} (${directionText})</span>
+                        </div>
+                    `;
+                });
+                
+                resultHTML += `</div>`;
+                
+                // 添加匯出按鈕
+                resultHTML += `
+                    <div class="action-buttons">
+                        <button onclick="exportToCSV([${data.primes.map(p => `'${p.prime_number}'`).join(',')}])">匯出為 CSV</button>
+                    </div>
+                `;
+                
+                elements.results.innerHTML = resultHTML;
+
+            } catch (error) {
+                showError(error.message);
+                elements.results.innerHTML = `
+                    <div class="error-message">
+                        搜尋失敗：${error.message}
+                        <button class="retry-button" onclick="findClosestPrime()">重試</button>
+                    </div>
+                `;
+            } finally {
+                toggleLoading(false);
+            }
+        }
+
+        // 匯出為 CSV
+        function exportToCSV(numbers) {
+            if (!numbers || numbers.length === 0) return;
+            
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + "號碼,格式化號碼\n"
+                + numbers.map(num => `${num},${formatPhoneNumber(num)}`).join("\n");
+                
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `質數手機號碼_${new Date().toISOString().slice(0, 10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showSuccess('CSV 檔案已下載');
+        }
+        
+        // 顯示祝賀動畫
+        function showCelebration() {
+            const messages = [
+                "恭喜！您輸入的號碼是質數！",
+                "太棒了！這是一個質數手機號碼！",
+                "驚喜！您找到了一個質數！",
+                "您的手機號碼是質數，多麼幸運！",
+                "恭喜發現質數手機號碼！"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // 創建祝賀彈窗
+            const celebration = document.createElement('div');
+            celebration.className = 'celebration';
+            celebration.innerHTML = `
+                <div class="celebration-content">
+                    <h2>🎉 ${randomMessage} 🎉</h2>
+                    <p>您的手機號碼是一個質數，這可是相當罕見的！</p>
+                    <button id="closeCelebration">太棒了！</button>
+                </div>
+            `;
+            
+            document.body.appendChild(celebration);
+            
+            // 添加關閉按鈕事件
+            document.getElementById('closeCelebration').addEventListener('click', () => {
+                celebration.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+                setTimeout(() => {
+                    document.body.removeChild(celebration);
+                }, 500);
+            });
+            
+            // 創建五彩紙屑效果
+            createConfetti();
+        }
+        
+        // 創建五彩紙屑效果
+        function createConfetti() {
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+            const confettiCount = 100;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = -10 + 'px';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.opacity = 1;
+                confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                
+                document.body.appendChild(confetti);
+                
+                // 設置動畫
+                const duration = Math.random() * 3 + 2;
+                const delay = Math.random() * 2;
+                
+                confetti.style.animation = `fall ${duration}s ease-in ${delay}s forwards`;
+                
+                // 創建 keyframes
+                const keyframes = `
+                    @keyframes fall {
+                        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+                        100% { transform: translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg); opacity: 0; }
+                    }
+                `;
+                
+                const style = document.createElement('style');
+                style.innerHTML = keyframes;
+                document.head.appendChild(style);
+                
+                // 移除元素
+                setTimeout(() => {
+                    document.body.removeChild(confetti);
+                    document.head.removeChild(style);
+                }, (duration + delay) * 1000);
+            }
+        }
+        
+        // 事件監聽器
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPrefixes();
+            
+            // 綁定搜尋按鈕事件
+            elements.searchButton.addEventListener('click', findClosestPrime);
+            
+            // 綁定輸入框回車事件
+            elements.phoneInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    findClosestPrime();
+                }
+            });
+            
+            // 綁定主題切換按鈕事件
+            elements.themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+</html>
