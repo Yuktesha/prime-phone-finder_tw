@@ -6,7 +6,7 @@ const config = {
     },
     // 生產環境
     production: {
-        API_BASE_URL: 'https://prime-sum-backend.onrender.com'
+        API_BASE_URL: 'https://prime-phone-finder-tw.onrender.com'
     }
 };
 
