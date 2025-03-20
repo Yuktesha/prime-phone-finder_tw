@@ -3,4 +3,5 @@ flask-cors==4.0.0
 gunicorn==21.2.0
 python-dotenv==1.0.1
 werkzeug==3.0.1
-odfpy>=1.4.1
+numpy==1.26.4
+tqdm==4.66.2
