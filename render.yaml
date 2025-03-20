@@ -1,13 +1,13 @@
 services:
   # 後端 API 服務
   - type: web
-    name: prime-phone-backend
+    name: prime-phone-finder_tw
     env: python
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: cd backend && python phone_api.py
+    buildCommand: pip install -r backend/requirements-prod.txt
+    startCommand: cd backend && gunicorn phone_api:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.11.8
       - key: HOST
         value: 0.0.0.0
       - key: PORT
@@ -22,7 +22,7 @@ services:
     routes:
       - type: rewrite
         source: /api/*
-        destination: https://prime-phone-backend.onrender.com/api/*
+        destination: https://prime-phone-finder_tw.onrender.com/api/*
       - type: rewrite
         source: /*
         destination: /index.html
