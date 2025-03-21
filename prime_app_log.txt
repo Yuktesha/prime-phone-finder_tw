@@ -1,0 +1,2 @@
+2025-03-21 09:18:05,900 - PrimePhoneApp - INFO - 找到默認數據庫路徑: D:\WinSurf\backend\prime_phones.db
+2025-03-21 09:18:05,901 - PrimePhoneApp - INFO - 成功連接到數據庫: D:\WinSurf\backend\prime_phones.db

@@ -15,12 +15,12 @@ VSVersionInfo(
         StringTable(
           u'040404b0',
           [StringStruct(u'CompanyName', u''),
-           StringStruct(u'FileDescription', u'由連續質數相加所得的質數搜索器'),
+           StringStruct(u'FileDescription', u'我的手機號碼與質數的距離'),
            StringStruct(u'FileVersion', u'1.0.0'),
-           StringStruct(u'InternalName', u'prime_sum'),
+           StringStruct(u'InternalName', u'prime_phone_distance'),
            StringStruct(u'LegalCopyright', u''),
-           StringStruct(u'OriginalFilename', u'prime_sum.exe'),
-           StringStruct(u'ProductName', u'質數搜索器'),
+           StringStruct(u'OriginalFilename', u'prime_phone_distance.exe'),
+           StringStruct(u'ProductName', u'我的手機號碼與質數的距離'),
            StringStruct(u'ProductVersion', u'1.0.0')])
       ]
     ),

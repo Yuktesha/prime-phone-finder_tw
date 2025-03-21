@@ -1,0 +1,199 @@
+2025-03-21 12:38:17,911 - LicensePlatePrimeApp - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 12:38:17,912 - LicensePlatePrimeApp - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 12:38:17,916 - LicensePlatePrimeApp - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 12:38:17,944 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-21 12:38:17,946 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 12:38:20,331 - license_plate_app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\WinSurf\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\WinSurf\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\WinSurf\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "D:\WinSurf\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\WinSurf\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\WinSurf\license_plate_app.py", line 181, in serve_static
+    return render_template_string(get_embedded_html())
+           ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'render_template_string' is not defined
+2025-03-21 12:38:20,354 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:38:20] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-03-21 12:38:21,364 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:38:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-21 12:38:54,663 - LicensePlatePrimeApp - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 12:38:54,664 - LicensePlatePrimeApp - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 12:38:54,668 - LicensePlatePrimeApp - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 12:38:54,688 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-21 12:38:54,689 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 12:38:56,830 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:38:56] "GET / HTTP/1.1" 200 -
+2025-03-21 12:39:08,021 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:39:08] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 12:42:33,822 - LicensePlatePrimeApp - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 12:42:33,823 - LicensePlatePrimeApp - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 12:42:33,826 - LicensePlatePrimeApp - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 12:42:33,854 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-21 12:42:33,855 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 12:42:36,141 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:42:36] "GET / HTTP/1.1" 200 -
+2025-03-21 12:42:42,913 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:42:42] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 12:43:58,921 - LicensePlatePrimeApp - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 12:43:58,922 - LicensePlatePrimeApp - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 12:43:58,924 - LicensePlatePrimeApp - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 12:43:58,953 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-21 12:43:58,954 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 12:44:01,205 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:44:01] "GET / HTTP/1.1" 200 -
+2025-03-21 12:44:14,824 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:44:14] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 12:45:02,578 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:45:02] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 12:45:05,696 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:45:05] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 12:47:19,194 - LicensePlatePrimeApp - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 12:47:19,195 - LicensePlatePrimeApp - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 12:47:19,199 - LicensePlatePrimeApp - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 12:47:19,220 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-21 12:47:19,221 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 12:47:21,382 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:47:21] "GET / HTTP/1.1" 200 -
+2025-03-21 12:47:35,030 - LicensePlatePrimeApp - DEBUG - Analyzing plate: z2y-1964
+2025-03-21 12:47:35,034 - LicensePlatePrimeApp - DEBUG - Split plate into front: z2y, back: 1964
+2025-03-21 12:47:35,035 - LicensePlatePrimeApp - DEBUG - Front part z2y converted to number: 35234
+2025-03-21 12:47:35,036 - LicensePlatePrimeApp - DEBUG - Found 5 closest primes for front part
+2025-03-21 12:47:35,037 - LicensePlatePrimeApp - DEBUG - Converting number 9973 to format of z2y
+2025-03-21 12:47:35,037 - LicensePlatePrimeApp - DEBUG - Clean original: z2y, Number string: 9973
+2025-03-21 12:47:35,038 - LicensePlatePrimeApp - DEBUG - Converted digit 9 to 9 (kept as digit)
+2025-03-21 12:47:35,038 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,039 - LicensePlatePrimeApp - DEBUG - Converted digit 7 to 7 (kept as digit)
+2025-03-21 12:47:35,039 - LicensePlatePrimeApp - DEBUG - Final formatted result: 997
+2025-03-21 12:47:35,040 - LicensePlatePrimeApp - DEBUG - Front part: Prime 9973 formatted as 997
+2025-03-21 12:47:35,040 - LicensePlatePrimeApp - DEBUG - Converting number 9967 to format of z2y
+2025-03-21 12:47:35,042 - LicensePlatePrimeApp - DEBUG - Clean original: z2y, Number string: 9967
+2025-03-21 12:47:35,042 - LicensePlatePrimeApp - DEBUG - Converted digit 9 to 9 (kept as digit)
+2025-03-21 12:47:35,043 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,043 - LicensePlatePrimeApp - DEBUG - Converted digit 6 to 6 (kept as digit)
+2025-03-21 12:47:35,044 - LicensePlatePrimeApp - DEBUG - Final formatted result: 996
+2025-03-21 12:47:35,044 - LicensePlatePrimeApp - DEBUG - Front part: Prime 9967 formatted as 996
+2025-03-21 12:47:35,045 - LicensePlatePrimeApp - DEBUG - Converting number 9949 to format of z2y
+2025-03-21 12:47:35,045 - LicensePlatePrimeApp - DEBUG - Clean original: z2y, Number string: 9949
+2025-03-21 12:47:35,046 - LicensePlatePrimeApp - DEBUG - Converted digit 9 to 9 (kept as digit)
+2025-03-21 12:47:35,047 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,047 - LicensePlatePrimeApp - DEBUG - Converted digit 4 to 4 (kept as digit)
+2025-03-21 12:47:35,048 - LicensePlatePrimeApp - DEBUG - Final formatted result: 994
+2025-03-21 12:47:35,049 - LicensePlatePrimeApp - DEBUG - Front part: Prime 9949 formatted as 994
+2025-03-21 12:47:35,049 - LicensePlatePrimeApp - DEBUG - Converting number 9941 to format of z2y
+2025-03-21 12:47:35,050 - LicensePlatePrimeApp - DEBUG - Clean original: z2y, Number string: 9941
+2025-03-21 12:47:35,051 - LicensePlatePrimeApp - DEBUG - Converted digit 9 to 9 (kept as digit)
+2025-03-21 12:47:35,051 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,052 - LicensePlatePrimeApp - DEBUG - Converted digit 4 to 4 (kept as digit)
+2025-03-21 12:47:35,052 - LicensePlatePrimeApp - DEBUG - Final formatted result: 994
+2025-03-21 12:47:35,053 - LicensePlatePrimeApp - DEBUG - Front part: Prime 9941 formatted as 994
+2025-03-21 12:47:35,053 - LicensePlatePrimeApp - DEBUG - Converting number 9931 to format of z2y
+2025-03-21 12:47:35,054 - LicensePlatePrimeApp - DEBUG - Clean original: z2y, Number string: 9931
+2025-03-21 12:47:35,054 - LicensePlatePrimeApp - DEBUG - Converted digit 9 to 9 (kept as digit)
+2025-03-21 12:47:35,055 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,055 - LicensePlatePrimeApp - DEBUG - Converted digit 3 to 3 (kept as digit)
+2025-03-21 12:47:35,056 - LicensePlatePrimeApp - DEBUG - Final formatted result: 993
+2025-03-21 12:47:35,056 - LicensePlatePrimeApp - DEBUG - Front part: Prime 9931 formatted as 993
+2025-03-21 12:47:35,056 - LicensePlatePrimeApp - DEBUG - Back part 1964 converted to number: 1964
+2025-03-21 12:47:35,057 - LicensePlatePrimeApp - DEBUG - Found 5 closest primes for back part
+2025-03-21 12:47:35,058 - LicensePlatePrimeApp - DEBUG - Converting number 1973 to format of 1964
+2025-03-21 12:47:35,059 - LicensePlatePrimeApp - DEBUG - Clean original: 1964, Number string: 1973
+2025-03-21 12:47:35,059 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,060 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,060 - LicensePlatePrimeApp - DEBUG - Used digit 7 from prime number
+2025-03-21 12:47:35,060 - LicensePlatePrimeApp - DEBUG - Used digit 3 from prime number
+2025-03-21 12:47:35,061 - LicensePlatePrimeApp - DEBUG - Final formatted result: 1973
+2025-03-21 12:47:35,061 - LicensePlatePrimeApp - DEBUG - Back part: Prime 1973 formatted as 1973
+2025-03-21 12:47:35,061 - LicensePlatePrimeApp - DEBUG - Converting number 1951 to format of 1964
+2025-03-21 12:47:35,062 - LicensePlatePrimeApp - DEBUG - Clean original: 1964, Number string: 1951
+2025-03-21 12:47:35,062 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,063 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,063 - LicensePlatePrimeApp - DEBUG - Used digit 5 from prime number
+2025-03-21 12:47:35,063 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,064 - LicensePlatePrimeApp - DEBUG - Final formatted result: 1951
+2025-03-21 12:47:35,064 - LicensePlatePrimeApp - DEBUG - Back part: Prime 1951 formatted as 1951
+2025-03-21 12:47:35,064 - LicensePlatePrimeApp - DEBUG - Converting number 1949 to format of 1964
+2025-03-21 12:47:35,065 - LicensePlatePrimeApp - DEBUG - Clean original: 1964, Number string: 1949
+2025-03-21 12:47:35,065 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,066 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,066 - LicensePlatePrimeApp - DEBUG - Used digit 4 from prime number
+2025-03-21 12:47:35,067 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,068 - LicensePlatePrimeApp - DEBUG - Final formatted result: 1949
+2025-03-21 12:47:35,068 - LicensePlatePrimeApp - DEBUG - Back part: Prime 1949 formatted as 1949
+2025-03-21 12:47:35,068 - LicensePlatePrimeApp - DEBUG - Converting number 1979 to format of 1964
+2025-03-21 12:47:35,069 - LicensePlatePrimeApp - DEBUG - Clean original: 1964, Number string: 1979
+2025-03-21 12:47:35,069 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,069 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,070 - LicensePlatePrimeApp - DEBUG - Used digit 7 from prime number
+2025-03-21 12:47:35,070 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,071 - LicensePlatePrimeApp - DEBUG - Final formatted result: 1979
+2025-03-21 12:47:35,071 - LicensePlatePrimeApp - DEBUG - Back part: Prime 1979 formatted as 1979
+2025-03-21 12:47:35,071 - LicensePlatePrimeApp - DEBUG - Converting number 1987 to format of 1964
+2025-03-21 12:47:35,072 - LicensePlatePrimeApp - DEBUG - Clean original: 1964, Number string: 1987
+2025-03-21 12:47:35,072 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,072 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,073 - LicensePlatePrimeApp - DEBUG - Used digit 8 from prime number
+2025-03-21 12:47:35,073 - LicensePlatePrimeApp - DEBUG - Used digit 7 from prime number
+2025-03-21 12:47:35,074 - LicensePlatePrimeApp - DEBUG - Final formatted result: 1987
+2025-03-21 12:47:35,075 - LicensePlatePrimeApp - DEBUG - Back part: Prime 1987 formatted as 1987
+2025-03-21 12:47:35,076 - LicensePlatePrimeApp - DEBUG - Full plate z2y1964 converted to number: 352341964
+2025-03-21 12:47:35,076 - LicensePlatePrimeApp - DEBUG - Found 5 closest primes for full plate
+2025-03-21 12:47:35,077 - LicensePlatePrimeApp - DEBUG - Converting number 9973 to format of z2y1964
+2025-03-21 12:47:35,077 - LicensePlatePrimeApp - DEBUG - Clean original: z2y1964, Number string: 0009973
+2025-03-21 12:47:35,077 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,078 - LicensePlatePrimeApp - DEBUG - Used digit 0 from prime number
+2025-03-21 12:47:35,078 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,078 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,079 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,079 - LicensePlatePrimeApp - DEBUG - Used digit 7 from prime number
+2025-03-21 12:47:35,079 - LicensePlatePrimeApp - DEBUG - Used digit 3 from prime number
+2025-03-21 12:47:35,080 - LicensePlatePrimeApp - DEBUG - Final formatted result: A0A9973
+2025-03-21 12:47:35,080 - LicensePlatePrimeApp - DEBUG - Full plate: Prime 9973 formatted as A0A9973
+2025-03-21 12:47:35,081 - LicensePlatePrimeApp - DEBUG - Converting number 9967 to format of z2y1964
+2025-03-21 12:47:35,081 - LicensePlatePrimeApp - DEBUG - Clean original: z2y1964, Number string: 0009967
+2025-03-21 12:47:35,081 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,082 - LicensePlatePrimeApp - DEBUG - Used digit 0 from prime number
+2025-03-21 12:47:35,082 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,082 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,083 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,083 - LicensePlatePrimeApp - DEBUG - Used digit 6 from prime number
+2025-03-21 12:47:35,083 - LicensePlatePrimeApp - DEBUG - Used digit 7 from prime number
+2025-03-21 12:47:35,084 - LicensePlatePrimeApp - DEBUG - Final formatted result: A0A9967
+2025-03-21 12:47:35,084 - LicensePlatePrimeApp - DEBUG - Full plate: Prime 9967 formatted as A0A9967
+2025-03-21 12:47:35,085 - LicensePlatePrimeApp - DEBUG - Converting number 9949 to format of z2y1964
+2025-03-21 12:47:35,085 - LicensePlatePrimeApp - DEBUG - Clean original: z2y1964, Number string: 0009949
+2025-03-21 12:47:35,085 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,086 - LicensePlatePrimeApp - DEBUG - Used digit 0 from prime number
+2025-03-21 12:47:35,086 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,087 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,087 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,088 - LicensePlatePrimeApp - DEBUG - Used digit 4 from prime number
+2025-03-21 12:47:35,093 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,093 - LicensePlatePrimeApp - DEBUG - Final formatted result: A0A9949
+2025-03-21 12:47:35,094 - LicensePlatePrimeApp - DEBUG - Full plate: Prime 9949 formatted as A0A9949
+2025-03-21 12:47:35,094 - LicensePlatePrimeApp - DEBUG - Converting number 9941 to format of z2y1964
+2025-03-21 12:47:35,094 - LicensePlatePrimeApp - DEBUG - Clean original: z2y1964, Number string: 0009941
+2025-03-21 12:47:35,095 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,095 - LicensePlatePrimeApp - DEBUG - Used digit 0 from prime number
+2025-03-21 12:47:35,096 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,096 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,096 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,097 - LicensePlatePrimeApp - DEBUG - Used digit 4 from prime number
+2025-03-21 12:47:35,097 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,097 - LicensePlatePrimeApp - DEBUG - Final formatted result: A0A9941
+2025-03-21 12:47:35,098 - LicensePlatePrimeApp - DEBUG - Full plate: Prime 9941 formatted as A0A9941
+2025-03-21 12:47:35,098 - LicensePlatePrimeApp - DEBUG - Converting number 9931 to format of z2y1964
+2025-03-21 12:47:35,098 - LicensePlatePrimeApp - DEBUG - Clean original: z2y1964, Number string: 0009931
+2025-03-21 12:47:35,099 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,099 - LicensePlatePrimeApp - DEBUG - Used digit 0 from prime number
+2025-03-21 12:47:35,100 - LicensePlatePrimeApp - DEBUG - Converted digit 0 to letter A
+2025-03-21 12:47:35,100 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,100 - LicensePlatePrimeApp - DEBUG - Used digit 9 from prime number
+2025-03-21 12:47:35,101 - LicensePlatePrimeApp - DEBUG - Used digit 3 from prime number
+2025-03-21 12:47:35,101 - LicensePlatePrimeApp - DEBUG - Used digit 1 from prime number
+2025-03-21 12:47:35,102 - LicensePlatePrimeApp - DEBUG - Final formatted result: A0A9931
+2025-03-21 12:47:35,102 - LicensePlatePrimeApp - DEBUG - Full plate: Prime 9931 formatted as A0A9931
+2025-03-21 12:47:35,102 - LicensePlatePrimeApp - DEBUG - Final results: {'front_part': {'original': 'z2y', 'number': 35234, 'closest_primes': [{'prime': 9973, 'formatted_prime': '997', 'distance': 25261}, {'prime': 9967, 'formatted_prime': '996', 'distance': 25267}, {'prime': 9949, 'formatted_prime': '994', 'distance': 25285}, {'prime': 9941, 'formatted_prime': '994', 'distance': 25293}, {'prime': 9931, 'formatted_prime': '993', 'distance': 25303}]}, 'back_part': {'original': '1964', 'number': 1964, 'closest_primes': [{'prime': 1973, 'formatted_prime': '1973', 'distance': 9}, {'prime': 1951, 'formatted_prime': '1951', 'distance': 13}, {'prime': 1949, 'formatted_prime': '1949', 'distance': 15}, {'prime': 1979, 'formatted_prime': '1979', 'distance': 15}, {'prime': 1987, 'formatted_prime': '1987', 'distance': 23}]}, 'full_plate': {'original': 'z2y1964', 'number': 352341964, 'closest_primes': [{'prime': 9973, 'formatted_prime': 'A0A9973', 'distance': 352331991}, {'prime': 9967, 'formatted_prime': 'A0A9967', 'distance': 352331997}, {'prime': 9949, 'formatted_prime': 'A0A9949', 'distance': 352332015}, {'prime': 9941, 'formatted_prime': 'A0A9941', 'distance': 352332023}, {'prime': 9931, 'formatted_prime': 'A0A9931', 'distance': 352332033}]}}
+2025-03-21 12:47:35,105 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 12:47:35] "POST /api/analyze_plate HTTP/1.1" 200 -

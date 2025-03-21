@@ -1,1 +1,1 @@
-web: cd backend && gunicorn main:app
+web: gunicorn simple_finder:app

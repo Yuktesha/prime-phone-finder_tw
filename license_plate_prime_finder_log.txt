@@ -1,0 +1,86 @@
+2025-03-21 13:41:47,171 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 13:41:47,172 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 13:41:47,174 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 13:41:47,196 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 13:41:47,197 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 13:41:49,779 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:41:49] "GET / HTTP/1.1" 200 -
+2025-03-21 13:41:50,832 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:41:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-21 13:42:06,367 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:42:06] "GET /?vscodeBrowserReqId=1742535726353 HTTP/1.1" 200 -
+2025-03-21 13:42:24,957 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:42:24] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 13:43:14,879 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:43:14] "GET / HTTP/1.1" 200 -
+2025-03-21 13:43:15,979 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:43:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-21 13:43:29,998 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:43:29] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 13:47:10,044 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 13:47:10,045 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 13:47:10,047 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 13:47:10,072 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 13:47:10,073 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 13:47:12,240 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:47:12] "GET / HTTP/1.1" 200 -
+2025-03-21 13:47:37,558 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:47:37] "GET /?vscodeBrowserReqId=1742536057536 HTTP/1.1" 200 -
+2025-03-21 13:47:57,195 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:47:57] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 13:50:19,594 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:50:19] "GET / HTTP/1.1" 200 -
+2025-03-21 13:50:36,055 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:50:36] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 13:53:20,690 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 13:53:20,691 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 13:53:20,694 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 13:53:20,717 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 13:53:20,718 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 13:53:22,949 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:53:22] "GET / HTTP/1.1" 200 -
+2025-03-21 13:53:36,943 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:53:36] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 13:55:42,524 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 13:55:42,525 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 13:55:42,527 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 13:55:42,550 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 13:55:42,551 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 13:55:44,813 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:55:44] "GET / HTTP/1.1" 200 -
+2025-03-21 13:56:04,999 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:56:04] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 13:58:44,197 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 13:58:44,198 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 13:58:44,201 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 13:58:44,224 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 13:58:44,225 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 13:58:46,409 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:58:46] "GET / HTTP/1.1" 200 -
+2025-03-21 13:58:59,762 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 13:58:59] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 14:04:29,996 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 14:04:29,997 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 14:04:29,999 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 14:04:30,021 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 14:04:30,022 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 14:04:32,247 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 14:04:32] "GET / HTTP/1.1" 200 -
+2025-03-21 14:04:46,528 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 14:04:46] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 14:06:21,725 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 14:06:21,726 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 14:06:21,728 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 14:06:21,752 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 14:06:21,753 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 14:06:24,117 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 14:06:24] "GET / HTTP/1.1" 200 -
+2025-03-21 14:06:38,679 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 14:06:38] "POST /api/analyze_plate HTTP/1.1" 200 -
+2025-03-21 14:10:14,108 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 14:10:14,109 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 14:10:14,112 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 14:10:14,136 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 14:10:14,136 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 14:10:16,329 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 14:10:16] "GET / HTTP/1.1" 200 -
+2025-03-21 14:11:27,558 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 14:11:27] "GET /?vscodeBrowserReqId=1742537487546 HTTP/1.1" 200 -
+2025-03-21 14:12:24,990 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 14:12:24,991 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 14:12:24,994 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 14:12:25,017 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 14:12:25,018 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 14:12:27,213 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 14:12:27] "GET / HTTP/1.1" 200 -
+2025-03-21 15:39:58,507 - LicensePlatePrimeFinder - INFO - Running in development mode. Path: D:\WinSurf
+2025-03-21 15:39:58,507 - LicensePlatePrimeFinder - INFO - Changed working directory to: D:\WinSurf
+2025-03-21 15:39:58,509 - LicensePlatePrimeFinder - INFO - Starting §Úªº¨®µP¸¹½X»P½è¼Æªº¶ZÂ÷ v1.0.0
+2025-03-21 15:39:58,531 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5002
+2025-03-21 15:39:58,532 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-21 15:40:00,697 - werkzeug - INFO - 127.0.0.1 - - [21/Mar/2025 15:40:00] "GET / HTTP/1.1" 200 -
