@@ -1,0 +1,45 @@
+# Python 相關
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虛擬環境
+venv/
+ENV/
+
+# 本地開發相關
+.env
+.venv
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 緩存文件
+primesdb_cache.bin
+*.db
+*.sqlite3
+
+# 日誌文件
+*.log
+
+# 系統文件
+.DS_Store
+Thumbs.db
